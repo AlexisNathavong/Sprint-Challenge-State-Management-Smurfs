@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import NewSmurfForm from "./NewSmurfForm";
 
+import { Title } from './StyledWidgets';
+
 
 const App = () => {
   
@@ -9,6 +11,11 @@ const App = () => {
 
       
         <div className="App">
+
+          <Title>
+           <h1>Welcome to the Smurf Registration Form:</h1>
+          </Title>
+
           <NewSmurfForm />
         </div>
       

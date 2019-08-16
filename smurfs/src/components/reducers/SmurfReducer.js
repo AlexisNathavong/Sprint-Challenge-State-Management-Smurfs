@@ -3,10 +3,10 @@
 export const initialState = {
     smurf: [
         {
-          name: "Brainey",
-          age: 200,
-          height: "5cm",
-          id: 0
+          name: '',
+          age: '',
+          height: '',
+          id: Date.now()
         }
       ]
 };
