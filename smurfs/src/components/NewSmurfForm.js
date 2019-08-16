@@ -1,23 +1,34 @@
 import React, { useState, useReducer } from 'react';
 import { reducer, initialState }from './reducers/SmurfReducer';
 
+import axios from 'axios';
+
 import { Form, Context, AddBtn } from './StyledWidgets';
 
 const NewSmurfForm = () => {
+    
     const [newSmurf, setNewSmurf] = useState({name: '', age: '', height: ''});
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const handleChanges = event => {
-        // const updatedSmurf = {...newSmurf, [event.target.name]: event.target.value};
-        // console.log('handleChanges', event.target.name, event.target.value, updatedSmurf);
-        // setNewSmurf(updatedSmurf);
-        setNewSmurf(event.target.value);
+        
+        setNewSmurf({...newSmurf, [event.target.name]: event.target.value});
     };
 
+   
+
     const addSmurf = event => {
+
         event.preventDefault();
-        dispatch({ type: 'ADD_SMURF', payload: newSmurf});
+        axios.post('http://localhost:3333/smurfs', newSmurf)
+            .then(res => {
+                
+                dispatch({ type: 'ADD_SMURF', payload: res.data});
+            })
+            .catch(err => {
+                dispatch({ type: "FAILURE"})
+            })
         setNewSmurf('');
     };
 
@@ -38,7 +49,7 @@ const NewSmurfForm = () => {
                                     className="form-group"
                                     type="text"
                                     value={newSmurf.name} required
-                                    name="smurf"
+                                    name="name"
                                     onChange={handleChanges}
                                 />
                         </div>

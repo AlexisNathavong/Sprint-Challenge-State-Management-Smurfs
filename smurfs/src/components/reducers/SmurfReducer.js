@@ -6,7 +6,7 @@ export const initialState = {
           name: '',
           age: '',
           height: '',
-          id: Date.now()
+          id: 0
         }
       ]
 };
@@ -18,7 +18,7 @@ export const reducer = (state = initialState, action) => {
 
         return {
             ...state,
-            smurf: [...state.smurf, {name: action.payload, id: Date.now()}]
+            smurf: action.payload
         };
 
 
