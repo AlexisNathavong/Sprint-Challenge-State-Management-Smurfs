@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 //NewSmurfForm
-export const Form = styled.div`
-    background-color: #0FBAEC;
+export const SmurfForm = styled.div`
+    background-image: linear-gradient(to top, rgba(227,0,0, 0), rgba(227, 21, 15, 1));
+
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 30px;
     border: 2px solid #E3E1E1;
     border-radius: 12px;
-    box-shadow: 5px 5px 8px #BFBFBF;
+    box-shadow: 5px 5px 8px;
     width: 30%;
     align-items: center;
     height: 300px;
@@ -23,7 +24,7 @@ export const Context = styled.div`
     font-size: 16px;
     margin-top: 25px;
     margin-bottom: 25px;
-    .form-group {
+    .smurf-form {
         display: flex;
         justify-content: space-between;
         margin-bottom: 15px;
@@ -34,6 +35,11 @@ export const Context = styled.div`
             display: flex;
             justify-content: space-between;
         }
+    }
+    img {
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 8px;
     }
 `;
 
@@ -59,8 +65,10 @@ export const Title = styled.h1`
 `;
 
 //Smurf
-export const Card = styled.div`
-    background-color: #0FBAEC;
+export const SmurfCard = styled.div`
+    background-image: linear-gradient(to top, rgba(15,0,0, 0), rgba(15, 186, 236, 1));
+
+    box-shadow: 5px 5px 8px;
     margin: 0 auto;
     margin-bottom: 30px;
     display: flex;

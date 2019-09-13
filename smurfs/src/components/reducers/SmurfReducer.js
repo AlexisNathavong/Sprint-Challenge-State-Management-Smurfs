@@ -11,7 +11,6 @@ export const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
-    console.log(action);
     switch(action.type) {
         case 'ADD_SMURF':
             return {
@@ -21,4 +20,6 @@ export const reducer = (state = initialState, action) => {
         default:
             return state;
     }
+
+
 }
